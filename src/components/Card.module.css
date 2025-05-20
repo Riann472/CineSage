@@ -4,7 +4,8 @@
     gap: 8px;
     width: 150px;
     cursor: pointer;
-    transition: all .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+    margin-top: 10px;
 }
 
 .card img {

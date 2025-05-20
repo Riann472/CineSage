@@ -18,6 +18,13 @@ const Home = () => {
                         alt="Imagem Peaky Blinders" title="Peaky Blinders" />
                 </div>
             </section>
+            <section className={styles.movies}>
+                <h1>Todos os filmes</h1>
+                <div className={styles.movieSection}>
+                    <Card src="https://m.media-amazon.com/images/M/MV5BOGM0NGY3ZmItOGE2ZC00OWIxLTk0N2EtZWY4Yzg3ZDlhNGI3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                        alt="Imagem Peaky Blinders" title="Peaky Blinders" />
+                </div>
+            </section>
         </main>
     )
 }

@@ -39,11 +39,13 @@
     cursor: pointer;
 }
 
-/* seção 1 */
+/* Seção 1 */
 
 .recommended {
-    margin-top: 200px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    margin-top: 130px;
+}
+
+/* Seção 2 */
+.movies {
+    margin-top: 30px;
 }

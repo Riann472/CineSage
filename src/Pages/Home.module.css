@@ -1,11 +1,15 @@
-form {
+.main {
+    padding: 20px;
+}
+
+.main form {
     display: flex;
     justify-content: center;
 }
 
-input {
+.main input {
     padding: 10px;
-    width: 50vw;
+    width: 30vw;
     background-color: rgb(255, 255, 255, 0.1);
     border: none;
     border-radius: 10px;
@@ -13,22 +17,33 @@ input {
     color: #fff;
 }
 
-::-webkit-input-placeholder {
-    color: #f0f0f0;
+.main ::-webkit-input-placeholder {
+    color: #d6d6d6;
 }
 
-form div {
+.main form div {
     position: relative;
     display: flex;
     align-items: center;
 }
 
-button {
+.main button {
     background-color: rgb(0, 0, 0, 0);
     border: none;
-    right: 0;
-    font-size: 26px;
+    right: 5px;
+    font-size: 22px;
     position: absolute;
-    top: 3px;
-    right: 4spx;
+    top: 5px;
+    right: 7px;
+    color: #d6d6d6;
+    cursor: pointer;
+}
+
+/* seção 1 */
+
+.recommended {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

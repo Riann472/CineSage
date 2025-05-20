@@ -1,0 +1,16 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 150px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.card img {
+    max-width: 150px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,18 @@
+form {
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    padding: 10px;
+    width: 50vw;
+    background-color: rgb(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    color: #fff;
+}
+
+::-webkit-input-placeholder {
+    color: #f0f0f0;
+}

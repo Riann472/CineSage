@@ -13,6 +13,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import AddCategoria from "./Pages/AddCategorias.jsx"
 import AddFilme from "./Pages/AddFilme.jsx"
+import Filme from "./Pages/Filme.jsx"
 
 function App() {
   const [authState, setAuthState] = useState({
@@ -44,6 +45,7 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/addfilme" element={<AddFilme />}></Route>
           <Route path="/home" element={<Home />}></Route>
+          <Route path="/filme/:id" element={<Filme />} />
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/admin" element={<Admin />}></Route>
           <Route path="/addcategoria" element={<AddCategoria />}></Route>

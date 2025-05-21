@@ -9,7 +9,8 @@
 }
 
 .card img {
-    max-width: 150px;
+    width: 150px;
+    max-height: 170px;
 }
 
 .card:hover {

@@ -16,26 +16,28 @@ const Home = () => {
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (!token) {
-            navigate('/');
+            navigate('/login');
             return;
         }
 
-        // Buscar todos os filmes
+        // Buscar todos os filmes (sempre pode buscar, independente do id)
         axios.get(`${import.meta.env.VITE_API_URL}/filmes`)
             .then(res => setTodosFilmes(res.data))
             .catch(err => console.error('Erro ao buscar todos os filmes:', err));
 
-        // Buscar recomendados com base nas categorias do usuário
-        axios.get(`${import.meta.env.VITE_API_URL}/recomendados/${authState.id}`, {
-            headers: { token }
-        })
-            .then(res => setRecomendados(res.data))
-            .catch(err => {
-                console.error('Erro ao buscar recomendados:', err);
-                setRecomendados([]); // Fallback se der erro
-            });
+        // Só faz a requisição de recomendados se o id for válido (diferente de 0)
+        if (authState.id !== 0) {
+            axios.get(`${import.meta.env.VITE_API_URL}/recomendados/${authState.id}`, {
+                headers: { token }
+            })
+                .then(res => setRecomendados(res.data))
+                .catch(err => {
+                    console.error('Erro ao buscar recomendados:', err);
+                    setRecomendados([]);
+                });
+        }
 
-    }, []);
+    }, [authState.id]);
 
     return (
         <main className={styles.main}>
@@ -51,7 +53,7 @@ const Home = () => {
                 <div className={styles.movieSection}>
                     {recomendados.length > 0 ? (
                         recomendados.map(filme => (
-                            <Card key={filme.id} src={filme.img} alt={`Imagem ${filme.nome}`} title={filme.nome} />
+                            <Card key={filme.id} id={filme.id} src={filme.img} alt={`Imagem ${filme.nome}`} title={filme.nome} />
                         ))
                     ) : (
                         <p>Nenhuma recomendação no momento.</p>
@@ -63,7 +65,7 @@ const Home = () => {
                 <h1>Todos os filmes</h1>
                 <div className={styles.movieSection}>
                     {todosFilmes.map(filme => (
-                        <Card key={filme.id} src={filme.img} alt={`Imagem ${filme.nome}`} title={filme.nome} />
+                        <Card key={filme.id} id={filme.id} src={filme.img} alt={`Imagem ${filme.nome}`} title={filme.nome} />
                     ))}
                 </div>
             </section>

@@ -49,3 +49,8 @@
 .movies {
     margin-top: 30px;
 }
+
+.movieSection {
+    display: flex;
+    gap: 20px;
+}

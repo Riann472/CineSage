@@ -17,7 +17,7 @@ const Header = () => {
             <ul>
                 {!authState.logged ? (
                     <>
-                        <li><Link to='/'>Register</Link></li>
+                        <li><Link to='/'>Registrar</Link></li>
                         <li><Link to='/login'>Login</Link></li>
                     </>
                 ) : (

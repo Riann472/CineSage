@@ -1,8 +1,16 @@
 import styles from './Home.module.css'
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import Card from '../components/Card';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+    const navigate = useNavigate()
+    useEffect(() => {
+        if (!localStorage.getItem('token')) {
+            navigate('/')
+        }
+    }, [])
     return (
         <main className={styles.main}>
             <form>

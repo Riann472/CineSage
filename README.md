@@ -36,7 +36,7 @@ npm install
  Crie um arquivo .env na raiz do projeto com a URL onde a API será hospedada localmente (ex: http://localhost:3001):
 
 ```env
-API_URL=http://localhost:3001
+VITE_API_URL=http://localhost:3001
 ```
 
 ### 5. Inicie o projeto

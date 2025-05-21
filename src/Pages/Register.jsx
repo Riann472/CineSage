@@ -1,13 +1,10 @@
-import { useEffect, useState } from 'react'
-import styles from './Login.module.css'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
-import { useContext } from "react";
-import { AuthContext } from "../helpers/AuthContext";
+import { Link, useNavigate } from 'react-router-dom'
+import styles from './Register.module.css'
+import { useEffect, useState } from 'react'
 
-const Login = () => {
+const Register = () => {
     const navigate = useNavigate()
-    const { authState, setAuthState } = useContext(AuthContext)
 
     useEffect(() => {
         if (localStorage.getItem('token')) {
@@ -21,23 +18,23 @@ const Login = () => {
     })
 
     return (
-        <main className={styles.loginContainer}>
-            <form className={styles.login} onSubmit={(e) => {
+        <main className={styles.registerContainer}>
+            <form className={styles.register} onSubmit={(e) => {
                 e.preventDefault()
-                axios.post(`${import.meta.env.VITE_API_URL}/login`, data)
+                axios.post(`${import.meta.env.VITE_API_URL}/register`, data)
                     .then(res => {
                         if (res.data.error) {
                             alert(res.data.error)
                         } else {
-                            alert(res.data.message)
-                            console.log(res.data)
-                            localStorage.setItem('token', res.data.token)
-                            setAuthState(true)
-                            navigate('/home')
+                            alert("Conta criada com sucesso!")
+                            navigate('/login')
                         }
                     })
+                    .catch(err => {
+                        alert("erro na requisição")
+                    })
             }}>
-                <h1>Entrar</h1>
+                <h1>Crie sua conta</h1>
 
                 <div>
                     <label htmlFor="username">Nome de usuário</label>
@@ -50,8 +47,10 @@ const Login = () => {
                 </div>
 
                 <button>Registrar</button>
+                <Link to='/login'>Ja tem uma conta? Entre!</Link>
             </form>
-        </main>)
+        </main>
+    )
 }
 
-export default Login
+export default Register

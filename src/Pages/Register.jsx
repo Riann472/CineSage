@@ -32,6 +32,7 @@ const Register = () => {
                     })
                     .catch(err => {
                         alert("erro na requisição")
+                        console.log(err)
                     })
             }}>
                 <h1>Crie sua conta</h1>

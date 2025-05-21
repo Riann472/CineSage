@@ -11,6 +11,8 @@ import Profile from './Pages/Profile.jsx'
 import { AuthContext } from "./helpers/AuthContext.js"
 import { useEffect, useState } from "react"
 import axios from "axios"
+import AddCategoria from "./Pages/AddCategorias.jsx"
+import AddFilme from "./Pages/AddFilme.jsx"
 
 function App() {
   const [authState, setAuthState] = useState({
@@ -40,9 +42,11 @@ function App() {
           <Route path="/" element={<Register />}></Route>
           <Route path="/categorias" element={<Categorias />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/addfilme" element={<AddFilme />}></Route>
           <Route path="/home" element={<Home />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/admin" element={<Admin />}></Route>
+          <Route path="/addcategoria" element={<AddCategoria />}></Route>
           <Route path="/users" element={<Users />}></Route>
         </Routes>
         <Footer />

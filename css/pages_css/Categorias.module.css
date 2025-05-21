@@ -15,9 +15,10 @@
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center;
     width: 100%;
     max-width: 800px;
 }
@@ -25,20 +26,27 @@
 .card {
     background-color: #383434;
     color: white;
-    border: none;
-    padding: 1rem;
-    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    min-width: 120px;
+    text-align: center;
 }
 
 .card:hover {
+    border-color: #e87f15;
     background-color: #4a4545;
 }
 
 .selected {
-    border: 2px solid white;
+    background-color: #e87f15;
+    color: #161616;
+    font-weight: bold;
+    border-color: #e87f15;
     transform: scale(1.05);
 }
 
@@ -46,23 +54,26 @@
     display: flex;
     gap: 1rem;
     margin-top: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .skipButton,
 .nextButton {
-    background: transparent;
-    border: 2px solid #383434;
+    background-color: #383434;
     color: white;
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
-    border-radius: 6px;
+    border: 2px solid transparent;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s;
+    transition: all 0.2s ease;
 }
 
 .skipButton:hover,
 .nextButton:hover {
-    background-color: #383434;
+    background-color: #e87f15;
+    color: #161616;
 }
 
 .nextButton:disabled {

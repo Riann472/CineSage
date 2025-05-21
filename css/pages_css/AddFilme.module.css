@@ -1,0 +1,92 @@
+.filme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #383434;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    margin: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.cat:hover {
+    background-color: #4a4545;
+}
+
+.selected {
+    background-color: #e87f15 !important;
+    font-weight: 600;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #161616;
+    color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #383434;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    resize: vertical;
+}
+
+.input::placeholder {
+    color: #bbbbbb;
+}
+
+.button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #e87f15;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #cc6e0f;
+}
+
+.message {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}

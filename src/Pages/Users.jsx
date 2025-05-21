@@ -31,10 +31,11 @@ const Users = () => {
                             <td>{user.id}</td>
                             <td>{user.user}</td>
                             <td>
-                                {Array.isArray(user.categorias)
+                                {Array.isArray(user.categorias) && user.categorias.length > 0
                                     ? user.categorias.map(cat => cat.nome).join(', ')
-                                    : user.categorias}
-                            </td>                        </tr>
+                                    : "Sem categorias selecionadas"}
+                            </td>
+                        </tr>
                     ))}
                 </tbody>
             </table>

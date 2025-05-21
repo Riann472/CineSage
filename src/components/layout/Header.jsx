@@ -8,7 +8,6 @@ const Header = () => {
     const navigate = useNavigate()
     const { authState, setAuthState } = useContext(AuthContext)
 
-    console.log(authState)
 
     return (
         <header>

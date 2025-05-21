@@ -1,11 +1,13 @@
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
-import styles from './Register.module.css'
+import styles from '../../css/pages_css/Register.module.css'
 import { useEffect, useState } from 'react'
+import { useContext } from 'react'
+import { AuthContext } from '../helpers/AuthContext'
 
 const Register = () => {
     const navigate = useNavigate()
-
+    const { setAuthState, authState } = useContext(AuthContext)
     useEffect(() => {
         if (localStorage.getItem('token')) {
             navigate('/home')
@@ -25,9 +27,12 @@ const Register = () => {
                     .then(res => {
                         if (res.data.error) {
                             alert(res.data.error)
+                            console.log(res.data)
                         } else {
-                            alert("Conta criada com sucesso!")
-                            navigate('/login')
+                            localStorage.setItem('token', res.data.token)
+                            console.log(res.data.user)
+                            setAuthState(res.data.user)
+                            navigate('/categorias')
                         }
                     })
                     .catch(err => {

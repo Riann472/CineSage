@@ -1,4 +1,4 @@
-import styles from './Home.module.css'
+import styles from '../../css/pages_css/Home.module.css'
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import Card from '../components/Card';
 import { useEffect } from 'react';
@@ -10,6 +10,7 @@ const Home = () => {
         if (!localStorage.getItem('token')) {
             navigate('/')
         }
+
     }, [])
     return (
         <main className={styles.main}>

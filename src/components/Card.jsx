@@ -1,4 +1,4 @@
-import styles from './Card.module.css'
+import styles from '../../css/components_css/Card.module.css'
 
 const Card = ({ src, alt, title }) => {
     return (

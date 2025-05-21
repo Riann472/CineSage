@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import styles from './Login.module.css'
+import styles from '../../css/pages_css/Login.module.css'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import { useContext } from "react";
@@ -31,6 +31,7 @@ const Login = () => {
                             alert(res.data.error)
                         } else {
                             localStorage.setItem('token', res.data.token)
+                            console.log(res.data.user)
                             setAuthState(res.data.user)
                             navigate('/home')
                         }

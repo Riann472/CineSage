@@ -1,0 +1,42 @@
+.container {
+    background-color: #161616;
+    color: white;
+    min-height: 100vh;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.titulo {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.card {
+    background-color: #383434;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    max-width: 500px;
+    margin: auto;
+}
+
+.card p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.categoriaLista {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+.categoriaLista li {
+    margin-bottom: 0.5rem;
+}

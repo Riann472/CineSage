@@ -1,0 +1,23 @@
+.configCard {
+    background-color: #383434;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    height: 25vh;
+    width: 10vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    cursor: pointer;
+    transition: transform .3s ease-in-out;
+    text-align: center;
+}
+
+.configCard:hover {
+    transform: scale(1.1);
+}
+
+.configCard svg {
+    font-size: 100px;
+}
